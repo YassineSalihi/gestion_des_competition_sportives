@@ -5,13 +5,16 @@
  */
 package util;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 /**
  *
  * @author yassinesalihi
  */
 public class TestHibernate {
     
-    {
+   /* {
         System.out.println("non static 1");
     }
     
@@ -31,9 +34,30 @@ public class TestHibernate {
     public TestHibernate() {
         System.out.println("construct");
     }
-    
+    */
     
     public static void main(String[] args) {
-        new TestHibernate();
+        //new TestHibernate();
+        try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+             Session session = sessionFactory.openSession()) {
+
+            System.out.println("✅ Connexion réussie !");
+            session.beginTransaction();
+
+            // Exemple de test :
+            /*ProduitService ps = new ProduitService();
+            ps.setNom("Nom test");
+            ps.setType("Service");
+
+            session.save(ps);
+            session.getTransaction().commit();
+            System.out.println("🟢 ProduitService enregistré.");
+        } catch (Exception e) {
+            System.err.println("❌ Erreur : " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    }*/
+        }
     }
 }
