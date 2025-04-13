@@ -1,13 +1,11 @@
 package org.entities;
 
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 
+@Entity
+@Table(name = "participant")
 public class Participant {
 
 

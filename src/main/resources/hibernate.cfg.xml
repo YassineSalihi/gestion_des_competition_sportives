@@ -9,7 +9,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mcompetition_db</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.password">ph/axo>vJe;789</property>
 
         <!-- Hibernate config -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
@@ -17,9 +17,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapping des entités -->
-        <mapping class="entities.User"/>
-        <mapping class="entities.Participant"/>
-        <mapping class="entities.Competition"/>
-        <mapping class="entities.Resultat"/>
+        <mapping class="org.entities.User"/>
+        <mapping class="org.entities.Participant"/>
+        <mapping class="org.entities.Competition"/>
+        <mapping class="org.entities.Resultat"/>
     </session-factory>
 </hibernate-configuration>
