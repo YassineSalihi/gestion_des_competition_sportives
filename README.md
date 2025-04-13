@@ -1,0 +1,70 @@
+# 🏆 Application de Gestion des Compétitions Sportives
+
+## 📌 Contexte
+
+Dans le cadre de la gestion d’activités sportives, il est essentiel de suivre les compétitions organisées, les participants inscrits, les résultats enregistrés et les statistiques de performances. Ce projet vise à développer une application web pour gérer efficacement ces éléments tout en assurant une interface moderne, interactive et intuitive.
+
+## ❗ Problématique
+
+Les plateformes sportives souffrent souvent de :
+- Manque de centralisation des données (participants, scores...),
+- Faible interactivité (inscription manuelle, rechargement de pages),
+- Absence de visualisation claire des performances.
+
+**➡️ Comment concevoir une application permettant de gérer les compétitions sportives, d’inscrire des participants, de saisir des résultats et de visualiser les scores de manière interactive ?**
+
+## 🎯 Objectifs de l'application
+
+### Objectif général
+Développer une application Java Web dynamique pour gérer les compétitions sportives, les inscriptions, les résultats et les statistiques par score.
+
+### Objectifs spécifiques
+- Gérer les **compétitions** (nom, type, dates).
+- Gérer les **participants** (nom, catégorie).
+- Enregistrer les **résultats** pour chaque compétition.
+- Afficher **les résultats par participant** et **par compétition**.
+- Générer des **statistiques visuelles** avec Chart.js.
+- Utiliser une **architecture MVC claire** (JSP/Servlets).
+- Persister les données avec Hibernate + MySQL.
+
+## 🛠️ Technologies et outils utilisés
+
+| Outil / Technologie        | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| **Java Web (JSP / Servlet)** | Interface utilisateur dynamique, logique métier, architecture MVC.         |
+| **MySQL**                  | Base de données relationnelle pour stocker compétitions, participants, résultats. |
+| **Hibernate**              | ORM pour la gestion automatique de la persistance des objets.              |
+| **JDBC**                   | Accès aux données dans la couche DAO.                                       |
+| **AJAX**                   | Pour l’ajout des résultats sans rechargement de page.                      |
+| **Chart.js**               | Génération de graphiques statistiques (ex. score moyen par compétition).   |
+
+## 📐 Diagramme de classes
+
+Le diagramme suivant représente les entités principales de l'application ainsi que leurs relations :
+![Image](https://github.com/user-attachments/assets/85274c95-333c-4a01-a26d-aaef823ccb68)
+
+## 📃 Pages principales
+
+1. 🏁 **Liste des compétitions**
+2. 👥 **Participants et résultats**
+3. 🧾 **Mes compétitions**
+4. 📊 **Statistiques des scores par compétition (Chart.js)**
+
+## 📆 Planning (Méthodologie Agile – Sprints)
+
+| Sprint       | Durée   | Contenu                                                                 |
+|--------------|---------|-------------------------------------------------------------------------|
+| **Sprint 1** | 2 jours | Création des entités `User`, `Participant`, `Competition`, `Resultat`   |
+| **Sprint 2** | 3 jours | Développement de la couche **DAO** avec Hibernate                       |
+| **Sprint 3** | 5 jours | Création des interfaces JSP + Servlet MVC pour saisie et affichage     |
+| **Sprint 4** | 4 jours | Intégration **AJAX** et **Chart.js** pour les statistiques dynamiques   |
+
+## ✅ Fonctionnalités à venir
+
+- 🔐 Authentification des utilisateurs
+- 🧮 Statistiques avancées (moyenne, classement)
+- 📱 Version responsive mobile
+- 📥 Export PDF des résultats
+
+---
+📌 Ce projet représente une **solution complète de gestion sportive**, alliant performance, ergonomie et visualisation en temps réel pour clubs, écoles ou événements.
