@@ -43,6 +43,9 @@ Développer une application Java Web dynamique pour gérer les compétitions spo
 Le diagramme suivant représente les entités principales de l'application ainsi que leurs relations :
 ![Image](https://github.com/user-attachments/assets/85274c95-333c-4a01-a26d-aaef823ccb68)
 
+## 🗃️ Modèle conceptuel de la base généré
+![Image](https://github.com/user-attachments/assets/121169da-5101-43c2-8b4a-a06d8adf30fc)
+
 ## 📃 Pages principales
 
 1. 🏁 **Liste des compétitions**
