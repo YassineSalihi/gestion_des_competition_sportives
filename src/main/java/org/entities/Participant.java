@@ -16,6 +16,10 @@ public class Participant {
     private String nom;
     private String categorie;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id") // nom de la colonne dans la base
+    private User user;
+
     @OneToMany(mappedBy = "participant", cascade = CascadeType.ALL)
     private List<Resultat> resultats;
 
@@ -51,6 +55,14 @@ public class Participant {
 
     public void setCategorie(String categorie) {
         this.categorie = categorie;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public List<Resultat> getResultats() {
