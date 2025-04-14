@@ -76,8 +76,7 @@ Le diagramme suivant représente les entités principales de l'application ainsi
 ![Image](https://github.com/user-attachments/assets/97c72669-5496-4fe3-91ab-796bc604843b)
 
 ### 🔍 Le filtrage
-![Image](https://github.com/user-attachments/assets/3d6794f2-510a-46f5-80f6-4b9a39cb50ba)
 ![Image](https://github.com/user-attachments/assets/0d961d4c-9fd3-4f06-8572-4c59c6a26cf3)
-
+![Image](https://github.com/user-attachments/assets/3d6794f2-510a-46f5-80f6-4b9a39cb50ba)
 
 📌 Ce projet représente une **solution complète de gestion sportive**, alliant performance, ergonomie et visualisation en temps réel pour clubs, écoles ou événements.
