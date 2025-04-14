@@ -70,4 +70,9 @@ Le diagramme suivant représente les entités principales de l'application ainsi
 - 📥 Export PDF des résultats
 
 ---
+### 📥 Insertion des Données (Hibernate)
+![Image](https://github.com/user-attachments/assets/7dce0b5e-6fcf-4387-9335-014a071ac320)
+![Image](https://github.com/user-attachments/assets/67e096ed-edbd-4f67-ba40-4b4404436feb)
+![Image](https://github.com/user-attachments/assets/97c72669-5496-4fe3-91ab-796bc604843b)
+
 📌 Ce projet représente une **solution complète de gestion sportive**, alliant performance, ergonomie et visualisation en temps réel pour clubs, écoles ou événements.
