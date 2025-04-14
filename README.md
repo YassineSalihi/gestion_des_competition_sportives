@@ -44,7 +44,7 @@ Le diagramme suivant représente les entités principales de l'application ainsi
 ![Image](https://github.com/user-attachments/assets/85274c95-333c-4a01-a26d-aaef823ccb68)
 
 ## 🗃️ Modèle conceptuel de la base généré
-![Image](https://github.com/user-attachments/assets/121169da-5101-43c2-8b4a-a06d8adf30fc)
+![Image](https://github.com/user-attachments/assets/fcee85e1-5340-42c0-9412-1835650a63bb)
 
 ## 📃 Pages principales
 
