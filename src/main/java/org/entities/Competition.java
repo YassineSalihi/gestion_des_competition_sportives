@@ -2,6 +2,8 @@ package org.entities;
 
 import java.util.Date;
 import java.util.List;
+import java.text.ParseException; // for constructor
+import java.text.SimpleDateFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +32,19 @@ public class Competition {
 
     public Competition() {
     }
+
+    public Competition(String nom, String type, String dateDebutStr, String dateFinStr) {
+        this.nom = nom;
+        this.type = type;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            this.dateDebut = sdf.parse(dateDebutStr);
+            this.dateFin = sdf.parse(dateFinStr);
+        } catch (ParseException e) {
+            throw new RuntimeException("Erreur lors du parsing des dates", e);
+        }
+    }
+
 
     public int getId() {
         return id;

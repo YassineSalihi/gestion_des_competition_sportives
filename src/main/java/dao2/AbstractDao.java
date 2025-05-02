@@ -56,4 +56,13 @@ public abstract class AbstractDao<T> implements IDao<T> {
         session.close();
         return result;
     }
+
+    public void save(T entity) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            session.save(entity);
+            session.getTransaction().commit();
+        }
+    }
+
 }

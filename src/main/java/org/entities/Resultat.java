@@ -36,6 +36,16 @@ public class Resultat {
         this.score = score;
     }
 
+    public Resultat(int competitionId, int participantId, double score) {
+        this.competition = new Competition();
+        this.competition.setId(competitionId);
+
+        this.participant = new Participant();
+        this.participant.setId(participantId);
+
+        this.score = score;
+    }
+
     public int getId() {
         return id;
     }
