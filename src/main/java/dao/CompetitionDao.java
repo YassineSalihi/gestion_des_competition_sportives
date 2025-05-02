@@ -31,4 +31,14 @@ public class CompetitionDao extends AbstractDao<Competition> {
                     .list();
         }
     }
+
+    public Competition findByNom(String nom) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Competition c WHERE c.nom = :nom", Competition.class)
+                    .setParameter("nom", nom)
+                    .setMaxResults(1)
+                    .uniqueResult();
+        }
+    }
+
 }
