@@ -81,9 +81,13 @@
                    alert('Résultat ajouté');
                    $('#resultatForm')[0].reset();
                    chargerResultats();
+               },
+               error: function(xhr) {
+                   alert("Erreur : " + xhr.responseText);
                }
            });
        });
+
 
        $(document).ready(chargerResultats);
    </script>

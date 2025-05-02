@@ -25,23 +25,23 @@ public class ResultatController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json");
-        List<Resultat> resultats = resultatDao.findAll();
 
-        StringBuilder json = new StringBuilder("[");
-        for (int i = 0; i < resultats.size(); i++) {
-            Resultat r = resultats.get(i);
-            json.append("{")
-                    .append("\"competitionId\":").append(r.getCompetition().getId()).append(",")
-                    .append("\"participantId\":").append(r.getParticipant().getId()).append(",")
-                    .append("\"score\":").append(r.getScore())
-                    .append("}");
-            if (i < resultats.size() - 1) json.append(",");
-        }
-        json.append("]");
+        // Charger les listes depuis la base
+        CompetitionDao competitionDao = new CompetitionDao();
+        ParticipantDao participantDao = new ParticipantDao();
 
-        response.getWriter().write(json.toString());
+        List<Competition> competitions = competitionDao.findAll();
+        List<Participant> participants = participantDao.findAll();
+
+        // Envoyer à la JSP
+        request.setAttribute("competitions", competitions);
+        request.setAttribute("participants", participants);
+
+        // Rediriger vers la vue
+        request.getRequestDispatcher("views/resultats.jsp").forward(request, response);
     }
+
+
 
 
     @Override
