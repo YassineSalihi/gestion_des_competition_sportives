@@ -26,33 +26,46 @@ public class ResultatController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Charger les listes depuis la base
+        String action = request.getParameter("action");
+        ResultatDao resultatDao = new ResultatDao();
         CompetitionDao competitionDao = new CompetitionDao();
         ParticipantDao participantDao = new ParticipantDao();
 
+        if ("delete".equals(action)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Resultat r = resultatDao.findById(id);
+            if (r != null) resultatDao.delete(r);
+            response.sendRedirect("resultats");
+            return;
+        }
+
+        if ("edit".equals(action)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            Resultat r = resultatDao.findById(id);
+            request.setAttribute("editResultat", r);
+        }
+
+        // Charger les listes
         List<Competition> competitions = competitionDao.findAll();
         List<Participant> participants = participantDao.findAll();
+        List<Resultat> resultats = resultatDao.findAll();
 
-        // Envoyer à la JSP
         request.setAttribute("competitions", competitions);
         request.setAttribute("participants", participants);
+        request.setAttribute("resultats", resultats);
 
-        // Rediriger vers la vue
         request.getRequestDispatcher("views/resultats.jsp").forward(request, response);
     }
-
-
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String idStr = request.getParameter("id");
         String competitionNom = request.getParameter("competition_nom");
         String participantNom = request.getParameter("participant_nom");
         double score = Double.parseDouble(request.getParameter("score"));
 
-        // Trouver les objets en base par nom
         Competition competition = new CompetitionDao().findByNom(competitionNom);
         Participant participant = new ParticipantDao().findByNom(participantNom);
 
@@ -61,14 +74,20 @@ public class ResultatController extends HttpServlet {
             return;
         }
 
-        Resultat resultat = new Resultat();
+        Resultat resultat = (idStr != null && !idStr.isEmpty())
+                ? resultatDao.findById(Integer.parseInt(idStr))
+                : new Resultat();
+
         resultat.setCompetition(competition);
         resultat.setParticipant(participant);
         resultat.setScore(score);
 
-        resultatDao.create(resultat);
+        if (idStr != null && !idStr.isEmpty()) {
+            resultatDao.update(resultat);
+        } else {
+            resultatDao.create(resultat);
+        }
 
-        response.setStatus(HttpServletResponse.SC_OK);
+        response.sendRedirect("resultats");
     }
-
 }
