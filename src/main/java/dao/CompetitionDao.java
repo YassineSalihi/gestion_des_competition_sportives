@@ -13,6 +13,10 @@ public class CompetitionDao extends AbstractDao<Competition> {
         super(Competition.class);
     }
 
+    public Competition findById(int id) {
+        return super.findById(id);
+    }
+
     public List<Competition> findByType(String type) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery(
