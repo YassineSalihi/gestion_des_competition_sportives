@@ -47,6 +47,22 @@
 </form>
 
 <h3 class="mt-5">Résultats enregistrés</h3>
+<!-- 🔍 Recherche -->
+<div class="mb-3">
+    <input type="text" id="searchInput" class="form-control" placeholder="Rechercher...">
+</div>
+
+<!-- 📂 Filtre -->
+<div class="mb-3">
+    <label for="filtreCompetition">Filtrer par compétition :</label>
+    <select id="filtreCompetition" class="form-select">
+        <option value="">-- Toutes --</option>
+        <c:forEach var="c" items="${competitions}">
+            <option value="${c.nom}">${c.nom}</option>
+        </c:forEach>
+    </select>
+</div>
+
 <table class="table table-bordered" id="resultatsTable">
     <thead>
         <tr>
@@ -56,6 +72,9 @@
             <th>Actions</th>
         </tr>
     </thead>
+
+
+
     <tbody>
         <c:forEach var="r" items="${resultats}">
             <tr>
@@ -71,6 +90,51 @@
         </c:forEach>
     </tbody>
 </table>
+
+<script>
+    window.onload = function () {
+
+        // 🔍 Recherche
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            const search = this.value.toLowerCase();
+            document.querySelectorAll("#resultatsTable tbody tr").forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(search) ? "" : "none";
+            });
+        });
+
+        // 📂 Filtrage
+        document.getElementById("filtreCompetition").addEventListener("change", function () {
+            const filtre = this.value.toLowerCase();
+            document.querySelectorAll("#resultatsTable tbody tr").forEach(row => {
+                const competition = row.children[0].textContent.toLowerCase();
+                row.style.display = (!filtre || competition.includes(filtre)) ? "" : "none";
+            });
+        });
+
+        // 📄 Pagination
+        const rowsPerPage = 5;
+        const rows = document.querySelectorAll("#resultatsTable tbody tr");
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+        const paginationDiv = document.createElement("div");
+        paginationDiv.className = "mt-3";
+        document.getElementById("resultatsTable").after(paginationDiv);
+
+        function afficherPage(page) {
+            rows.forEach((row, i) => {
+                row.style.display = (i >= (page - 1) * rowsPerPage && i < page * rowsPerPage) ? "" : "none";
+            });
+
+            paginationDiv.innerHTML = "";
+            for (let i = 1; i <= totalPages; i++) {
+                paginationDiv.innerHTML += `<button class="btn btn-sm ${i == page ? 'btn-primary' : 'btn-light'} mx-1" onclick="afficherPage(${i})">${i}</button>`;
+            }
+        }
+
+        afficherPage(1);
+    };
+</script>
+
+
 
 </body>
 </html>
