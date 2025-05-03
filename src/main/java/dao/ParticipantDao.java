@@ -21,6 +21,12 @@ public class ParticipantDao extends AbstractDao<Participant> {
         }
     }
 
+    public Participant findById(int id) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.get(Participant.class, id);
+        }
+    }
+
     public Participant findByNom(String nom) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM Participant p WHERE p.nom = :nom", Participant.class)

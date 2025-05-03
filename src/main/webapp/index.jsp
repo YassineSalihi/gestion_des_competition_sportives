@@ -8,8 +8,8 @@
     <ul>
         <li><a href="competitions">Liste des compétitions</a></li>
         <li><a href="participants">Participants</a></li>
-        <li><a href="views/resultats.jsp">Ajouter résultat</a></li>
-        <li><a href="views/statistiques.jsp">Statistiques</a></li>
+        <li><a href="resultats">Ajouter résultat</a></li>
+        <li><a href="statistiques">Statistiques</a></li>
     </ul>
 </body>
 </html>
