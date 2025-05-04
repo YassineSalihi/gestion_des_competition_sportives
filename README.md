@@ -80,3 +80,13 @@ Le diagramme suivant représente les entités principales de l'application ainsi
 ![Image](https://github.com/user-attachments/assets/3d6794f2-510a-46f5-80f6-4b9a39cb50ba)
 
 📌 Ce projet représente une **solution complète de gestion sportive**, alliant performance, ergonomie et visualisation en temps réel pour clubs, écoles ou événements.
+
+### 📷 Screenshots
+
+![Image](https://github.com/user-attachments/assets/bc00926a-c6ba-420f-9307-41aad0f45870)
+![Image](https://github.com/user-attachments/assets/cfd92ba8-3df3-4b82-8cd3-1b65ab4beed1)
+![Image](https://github.com/user-attachments/assets/2e6d5e43-ba31-4fa2-90b3-302b634c652f)
+![Image](https://github.com/user-attachments/assets/9af877e1-ea78-4484-813d-eb43f98be660)
+![Image](https://github.com/user-attachments/assets/23eba29f-c615-4df2-aa52-c94a6a6a2c9d)
+![Image](https://github.com/user-attachments/assets/84168baa-7f04-4cee-a9dc-03ea4dce48ae)
+![Image](https://github.com/user-attachments/assets/7d3614f6-a248-4dc7-b261-fc0b0208ebae)
