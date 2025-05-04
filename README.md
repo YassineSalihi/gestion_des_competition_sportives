@@ -90,3 +90,7 @@ Le diagramme suivant représente les entités principales de l'application ainsi
 ![Image](https://github.com/user-attachments/assets/2e6d5e43-ba31-4fa2-90b3-302b634c652f)
 ![Image](https://github.com/user-attachments/assets/cfd92ba8-3df3-4b82-8cd3-1b65ab4beed1)
 ![Image](https://github.com/user-attachments/assets/bc00926a-c6ba-420f-9307-41aad0f45870)
+
+### ⏺️ Video 
+
+https://github.com/user-attachments/assets/2d13742e-6d8c-4dec-8ea5-b2bccb076551
